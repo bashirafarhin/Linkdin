@@ -15,6 +15,10 @@ export const createPost = async (
 
   try {
     const { content } = req.body;
+    if (!req.user) {
+      return res.status(401).json({ message: "Unauthorized" });
+    }
+
     const author = req.user._id;
     const newPost = new Post({ content, author });
     await newPost.save();

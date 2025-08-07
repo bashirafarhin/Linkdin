@@ -1,4 +1,5 @@
-import mongoose, { InferSchemaType, Schema } from "mongoose";
+import mongoose, { Schema, InferSchemaType } from "mongoose";
+import { Document } from "mongoose";
 
 const userSchema = new Schema(
   {
@@ -21,17 +22,29 @@ const userSchema = new Schema(
     },
     username: {
       type: String,
-      required: true,
+      required: [true, "Username is required"],
       unique: true,
     },
     bio: {
       type: String,
       default: "",
-      maxlength: 100,
+      maxlength: [100, "Bio must not exceed 100 characters"],
     },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+  }
 );
 
-type UserDocument = InferSchemaType<typeof userSchema>;
+export interface UserDocument extends Document {
+  _id: string;
+  name: string;
+  email: string;
+  password: string;
+  username: string;
+  bio: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 export default mongoose.model<UserDocument>("User", userSchema);

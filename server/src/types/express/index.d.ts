@@ -1,4 +1,4 @@
-import { UserDocument } from "../../models/userModel"; // Adjust path to your model
+import { UserDocument } from "../../models/userModel.ts"; // Adjust path to your model
 
 declare global {
   namespace Express {

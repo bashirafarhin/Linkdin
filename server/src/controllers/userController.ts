@@ -39,7 +39,7 @@ export const updateUserProfile = async (
     if (!req.user) {
       return res.status(401).json({ message: "Not authorized" });
     }
-    const userId = req.user.id;
+    const userId = req.user._id;
     const { name, bio } = req.body;
     const user = await User.findByIdAndUpdate(
       userId,

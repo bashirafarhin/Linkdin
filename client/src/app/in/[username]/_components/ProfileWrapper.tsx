@@ -53,11 +53,11 @@ export default function ProfileWrapper() {
     }
   }, [currentProfileUsername, loggedInuser]);
 
-  return (
+  return profile ? (
     <ProfileContent
       profile={profile}
       isCurrentUser={isCurrentUser}
       currentProfileUsername={currentProfileUsername}
     />
-  );
+  ) : null;
 }

@@ -6,10 +6,7 @@ import userRoute from "./routes/userRoute";
 import postRoute from "./routes/postRoute";
 import { errorHandler } from "./middleware/errorHandler";
 import cookieParser from "cookie-parser";
-
-dotenv.config({
-  path: process.env.NODE_ENV === "production" ? ".env.production" : ".env",
-});
+dotenv.config();
 
 const app = express();
 

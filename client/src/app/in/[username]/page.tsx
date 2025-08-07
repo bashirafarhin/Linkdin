@@ -2,7 +2,7 @@ import React from "react";
 import ProfileWrapper from "./_components/ProfileWrapper";
 import RightSidebar from "@/app/feed/_components/RightSidebar";
 
-export default function Page() {
+export default function page() {
   return (
     <div className="flex flex-col sm:flex-row sm:justify-between gap-4 p-4 max-w-7xl mx-auto">
       <ProfileWrapper />

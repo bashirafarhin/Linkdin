@@ -12,6 +12,6 @@ export const sendAccessToken = (res: Response, token: string) => {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "strict",
-    maxAge: 15 * 60 * 1000,
+    maxAge: 30 * 60 * 1000,
   });
 };

@@ -32,10 +32,10 @@ export default function RootLayout({
       >
         <Toaster />
         <StoreProvider>
-          {/* <AuthProvider> */}
-          <Header />
-          <main className="flex-1 w-full">{children}</main>
-          {/* </AuthProvider> */}
+          <AuthProvider>
+            <Header />
+            <main className="flex-1 w-full">{children}</main>
+          </AuthProvider>
         </StoreProvider>
       </body>
     </html>

@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+body {
+  background: #f4f2ee; /* will be white */
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0; /* Ensure no default spacing */
+  padding: 0; /* Remove default padding */
+  min-height: 100vh; /* Stretch to full screen */
+  box-sizing: border-box;
+}
+
+/* globals.css */
+@keyframes loaderBar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-loader-bar {
+  animation: loaderBar 1.5s infinite linear;
+}

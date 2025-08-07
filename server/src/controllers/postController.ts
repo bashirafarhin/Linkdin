@@ -37,6 +37,11 @@ export const getAllPosts = async (
 ) => {
   try {
     const posts = await Post.find().populate("author", "name bio username");
+    // Shuffle posts using Fisher–Yates algorithm
+    for (let i = posts.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [posts[i], posts[j]] = [posts[j], posts[i]];
+    }
     res.status(200).json({ posts });
   } catch (err) {
     const errorMessage =

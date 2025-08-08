@@ -11,7 +11,7 @@ export const sendAccessToken = (res: Response, token: string) => {
   res.cookie("accessToken", token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-    sameSite: "none",
+    sameSite: false,
     maxAge: 30 * 60 * 1000,
   });
 };

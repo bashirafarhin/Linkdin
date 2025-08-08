@@ -1,10 +1,12 @@
 "use client";
+
 import { useParams, useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import { RootState } from "@/Redux/store";
 import { useEffect, useState } from "react";
 import ProfileContent from "./ProfileContent";
 import axios from "axios";
+import Loader from "@/components/ui/Loader";
 
 export default function ProfileWrapper() {
   const router = useRouter();
@@ -12,7 +14,7 @@ export default function ProfileWrapper() {
     username: string;
   };
   const { data: loggedInuser } = useSelector((state: RootState) => state.user);
-  const [profile, setProfile] = useState(loggedInuser);
+  const [profile, setProfile] = useState<any>(null);
 
   useEffect(() => {
     if (!currentProfileUsername) {
@@ -52,6 +54,7 @@ export default function ProfileWrapper() {
       setProfile(loggedInuser);
     }
   }, [currentProfileUsername, loggedInuser]);
+  console.log(profile);
 
   return profile ? (
     <ProfileContent
@@ -59,5 +62,7 @@ export default function ProfileWrapper() {
       isCurrentUser={isCurrentUser}
       currentProfileUsername={currentProfileUsername}
     />
-  ) : null;
+  ) : (
+    <Loader />
+  );
 }

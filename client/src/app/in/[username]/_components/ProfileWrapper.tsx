@@ -14,7 +14,7 @@ export default function ProfileWrapper() {
     username: string;
   };
   const { data: loggedInuser } = useSelector((state: RootState) => state.user);
-  const [profile, setProfile] = useState<any>(null);
+  const [profile, setProfile] = useState<typeof loggedInuser>(null);
 
   useEffect(() => {
     if (!currentProfileUsername) {

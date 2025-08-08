@@ -7,7 +7,7 @@ This is a mini LinkedIn-like community platform built as part of the Full Stack 
 ---
 
 ## 🌐 Live Links
-
+- **Video Demo [Click here](https://github.com/user-attachments/assets/da286cb8-7551-46d8-bd1b-80a7d40d1859)
 - **Frontend (Next.js + TypeScript on Vercel)**: [Click here](https://linkdin-mauve.vercel.app/)
 - **Backend (Node.js + Express + TypeScript on Render)**: [Click here](https://linkdin-g0nm.onrender.com)
 
